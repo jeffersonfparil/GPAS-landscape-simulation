@@ -24,3 +24,7 @@ This repository contains the code for simulating the landscapes used in the manu
   + `selection` - selection intensity for the trait of interest
   + `bg_selection` - background selection intesity (ignore this since this is constant and does not affect the trait of interest)
   + `GRADIENT` - causal allele diffusion gradient (code: 0 for uniform distribution across the landscape; 1 for the top rows of populations as the origin of causal alleles; and 2 for the top and bottom rows of populations as the origin of the causal alleles)
+- `GPASim_8.0_analysis.sh` and associated scripts perform the analysis to answer the 3 central questions of the paper:
+  + How many populations do we need to sample to yield optimal GPAS performance?
+  + Under which landscape-specific circumstances should we use Indi-seq or Pool-seq?
+  + And which populations to select under different landscape scenarios?
