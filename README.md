@@ -19,8 +19,8 @@ This repository contains the code for simulating the landscapes used in the manu
 - `GPASim_7.0_slurmer.sh` is the [Spartan-specific](https://dashboard.hpc.unimelb.edu.au/) script to generate multiple [Slurm](https://slurm.schedmd.com/documentation.html) scripts to run on indivudal nodes of a high-performance computing cluster. The input parameters used in the paper are harcoded in lines 85 to 97:
   + `rep` - number of replications
   + `nQTL` - number of QTL
-  + `nBGS` - number of background QTL (ignore as this is constant and does not affect the trait of interest)
+  + `nBGS` - number of background QTL (ignore this since this is constant and does not affect the trait of interest)
   + `migration` - migration rate
   + `selection` - selection intensity for the trait of interest
-  + `bg_selection` - background selection intesity (ignore as this is constant and does not affect the trait of interest)
+  + `bg_selection` - background selection intesity (ignore this since this is constant and does not affect the trait of interest)
   + `GRADIENT` - causal allele diffusion gradient (code: 0 for uniform distribution across the landscape; 1 for the top rows of populations as the origin of causal alleles; and 2 for the top and bottom rows of populations as the origin of the causal alleles)
