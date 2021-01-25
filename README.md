@@ -3,7 +3,7 @@
 This repository contains the code for simulating the landscapes used in the manuscript: [**Optimising sampling design for the genomic analysis of quantitative traits in natural populations**](https://www.authorea.com/users/369690/articles/488504-optimising-sampling-design-for-the-genomic-analysis-of-quantitative-traits-in-natural-populations).
 
 ## Hardware requirement:
-- a high-performance computing cluster (≥ 100 GB of RAM per node with 32 compute cores)
+- a high-performance computing cluster (≥32 compute cores and ≥100 GB of RAM per node)
 
 ## Software requirement:
 - Linux operating system running a Debian-based package manager (preferrably Ubuntu)
