@@ -181,9 +181,9 @@ echo -e "mating_system 0" > ${OUTPREFIX}.ini                    #hermaphrodite r
 ### Demography
 echo -e "patch_number $nPop" >> ${OUTPREFIX}.ini                # Number of populations or subpopulations to simulate: must have a natural number square-root
 echo -e "generations $nGen" >> ${OUTPREFIX}.ini                 #Lolium has been introduced to Australia around 1880
-echo -e "patch_capacity $nIndividuals" >> ${OUTPREFIX}.ini      #carrying capacity set to a billion
-echo -e "regulation_model_offspring 1" >> ${OUTPREFIX}.ini      #regulation of population size to carrying capacity (patch_capacity) via random culling for offsprings
-echo -e "regulation_model_adults 1" >> ${OUTPREFIX}.ini         #regulation of population size to carrying capacity (patch_capacity) via random culling for adults
+echo -e "patch_capacity $nIndividuals" >> ${OUTPREFIX}.ini      #carrying capacity
+echo -e "regulation_model_offspring 1" >> ${OUTPREFIX}.ini      #regulation of population size to carrying capacity (patch_capacity) via random culling of offsprings
+echo -e "regulation_model_adults 1" >> ${OUTPREFIX}.ini         #regulation of population size to carrying capacity (patch_capacity) via random culling of adults
 # echo -e "mating_nb_offspring_model 3" >> ${OUTPREFIX}.ini       #simple fecundity by rouding the number of offsrpings) with fecundity rate of...
 echo -e "mating_nb_offspring_model 0" >> ${OUTPREFIX}.ini       #total number of offspring is set to carrying capacity
 echo -e "mean_fecundity 1" >> ${OUTPREFIX}.ini                  #... 1 which means a constant population size which is just an approximation though I don't know how bad of an approximation it is
@@ -191,7 +191,7 @@ echo -e "dispersal_rate $migration" >> ${OUTPREFIX}.ini         #migration rate 
 # echo -e "dispersal_model 2" >> ${OUTPREFIX}.ini                 #1-dimensional stepping-stone model
 # echo -e "dispersal_border_model 2" >> ${OUTPREFIX}.ini          #migrants from the border gets lost for the 1D stepping-stone model
 echo -e "dispersal_model 3" >> ${OUTPREFIX}.ini                 #2D stepping-stone
-echo -e "dispersal_lattice_range 1" >> ${OUTPREFIX}.ini         #2D stepping-stone: dispersal range of 8 adjacent patches (vertical, horizontal and dagonal; m/8)
+echo -e "dispersal_lattice_range 1" >> ${OUTPREFIX}.ini         #2D stepping-stone: dispersal range of 8 adjacent patches (vertical, horizontal and diagonal; m/8)
 echo -e "dispersal_border_model 2" >> ${OUTPREFIX}.ini          #absorbing boundaries: migration beyond the border is lost
 ### dispersal_lattice_dims by defualt sets a square patches structure sqrt(nPop) x sqrt(nPop) and if sqrt(nPop) is not a whole number quantiNemo2 will return an error!
 # n_rows_cols=$(echo "sqrt(($nPop))" | bc)
@@ -216,7 +216,7 @@ echo -e "\t\t{7: $(cat genome_loci_7.temp)} }" >> ${OUTPREFIX}.ini
 ### Genotype configuration
 echo -e "quanti_loci_1 $(echo $nLoci - $nBGS | bc)" >> ${OUTPREFIX}.ini                #[trait of interest: QTL-based] total number of loci: neutral and QTL
 echo -e "quanti_loci_2 $nBGS" >> ${OUTPREFIX}.ini                #[background selection trait]total number of loci: neutral and QTL
-echo -e "quanti_all $nAlleles" >> ${OUTPREFIX}.ini              #number of alleles per locus; and since we're simulating SNPs we want 5: A,T,C,G and DEL excluding N
+echo -e "quanti_all $nAlleles" >> ${OUTPREFIX}.ini              #number of alleles per locus; and since we're simulating SNPs we want have a maximum of 5, i.e. A,T,C,G and DEL excluding N; but for simplicity biallelic is preferred
 echo -e "quanti_nb_trait 2" >> ${OUTPREFIX}.ini                 #number of traits: 2 - one for the quantitative trait of interest and the other as background selection simulator
     ###### Build the quanti_allelic_file for the QTL and background selection (BGS) loci specs
     echo -e "# Quantitative Alleles Specifications File" > QTL.spec ### loci specifications for the trait of interest
