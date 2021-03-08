@@ -1,6 +1,6 @@
 # GPAS Landscape Simulation
 
-This repository contains the code for simulating the landscapes used in the manuscript: [**Optimising sampling design for the genomic analysis of quantitative traits in natural populations**](https://www.authorea.com/users/369690/articles/488504-optimising-sampling-design-for-the-genomic-analysis-of-quantitative-traits-in-natural-populations).
+This repository contains the code for simulating the landscapes used in the manuscript: [**Optimising sampling design for the genomic analysis of quantitative traits in natural populations**](https://doi.org/10.22541/au.161429335.52330927/v1).
 
 ## Hardware requirement:
 - a high-performance computing cluster (≥32 compute cores and ≥100 GB of RAM per node)
